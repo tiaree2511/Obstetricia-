@@ -6,11 +6,11 @@ function estaDesbloqueado(ramo) { return ramo.requisitos.every(req => estadoRamo
 
 function renderMalla() { const malla = document.getElementById("malla"); malla.innerHTML = "";
 
-const maxSemestre = Math.max(...ramos.map(r => r.semestre)); for (let s = 1; s <= maxSemestre; s++) { const columna = document.createElement("div"); columna.className = "semestre"; columna.style.minWidth = "140px";
+const maxSemestre = Math.max(...ramos.map(r => r.semestre)); for (let s = 1; s <= maxSemestre; s++) { const columna = document.createElement("div"); columna.className = "semestre"; columna.style.minWidth = "90px";
 
 const titulo = document.createElement("h2");
-titulo.textContent = `Semestre ${s}`;
-titulo.style.fontSize = "14px";
+titulo.textContent = `S${s}`;
+titulo.style.fontSize = "10px";
 columna.appendChild(titulo);
 
 ramos.filter(r => r.semestre === s).forEach(ramo => {
@@ -19,15 +19,15 @@ ramos.filter(r => r.semestre === s).forEach(ramo => {
 
   const div = document.createElement("div");
   div.className = "ramo";
-  div.style.fontSize = "12px";
-  div.style.padding = "8px";
+  div.style.fontSize = "9px";
+  div.style.padding = "4px";
 
   if (aprobado) div.classList.add("aprobado");
   else if (desbloqueado) div.classList.add("desbloqueado");
 
   const nombre = document.createElement("h4");
   nombre.textContent = ramo.nombre;
-  nombre.style.fontSize = "12px";
+  nombre.style.fontSize = "9px";
   const codigo = document.createElement("small");
   codigo.textContent = ramo.id;
 
